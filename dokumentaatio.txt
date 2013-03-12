@@ -1,0 +1,6 @@
+Aihe: Simppeli roolipeli/seikkailu
+
+Ohjelma jossa pelaaja seikkailee yhdellä henkilöllä maailmassa taistellen 
+vihollisia vastaan.
+
+Yhden pelaajan peli.
