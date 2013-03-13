@@ -4,3 +4,9 @@ Ohjelma jossa pelaaja seikkailee yhdellä henkilöllä maailmassa taistellen
 vihollisia vastaan.
 
 Yhden pelaajan peli.
+
+
+Aloitin luonnostelemaan luokkakaaviota, mutta en toistaiseksi ole aivan varma mitä kaikkea
+haluan ohjelmaan, sekä miten luokat liittyvät toisiinsa. Aloitin ohjelmakoodin kirjoittamisen
+kirjoittamalla Henkilö-olion pohjan valmiiksi. Kyseisen olion pohjalta tulevat toimimaan
+sekä pelin päähenkilö, sekä pelin viholliset. 

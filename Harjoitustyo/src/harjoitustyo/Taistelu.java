@@ -11,3 +11,4 @@ package harjoitustyo;
 public class Taistelu {
     
 }
+o
