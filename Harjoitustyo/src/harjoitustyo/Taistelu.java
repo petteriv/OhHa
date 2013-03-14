@@ -10,5 +10,14 @@ package harjoitustyo;
  */
 public class Taistelu {
     
+    public Taistelu(){
+        
+    }
+    
+    public void taistele(Henkilo lyoja, Henkilo torjuja){
+        int vahinko = lyoja.getVoima() - torjuja.getPanssari();
+        
+        torjuja.otaVahinkoa(vahinko);
+        
+    }
 }
-o
