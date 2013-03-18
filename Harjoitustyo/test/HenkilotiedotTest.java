@@ -38,11 +38,7 @@ public class HenkilotiedotTest {
     @After
     public void tearDown() {
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
     @Test
     public void henkilonNimiEiVoiOllaTyhja(){
         assertEquals("default", testiHenkilo.getNimi());
@@ -84,14 +80,5 @@ public class HenkilotiedotTest {
         assertEquals( false, testiHenkilo.tarkistaKuolema());
     }
     
-    @Test
-    public void tasonKasvattaminenToimii(){
-        testiHenkilo.tasoKasvaa();
-        assertEquals(" default \n" + 
-                     " taso: 2\n" + 
-                     " HP: 120/120\n" +
-                     " panssari: 10\n" +
-                     " voima: 25", testiHenkilo.toString() );
-    }
     
 }

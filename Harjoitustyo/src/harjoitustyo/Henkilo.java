@@ -13,10 +13,12 @@ public class Henkilo {
     private String nimi;
     private int MaxHP;
     private int HP;
-    private int panssari;
+    private int alkuPanssari;
     private int voima;
     private int lvl;
     private boolean elava;
+    private Ase ase;
+    private Panssari panssari;
     
     //Tämä olio toimii pohjana kaikkiin pelissä tarvittaviin hahmoihin
     //Olio luodaan valmiiden arvojen pohjalta, pelaaja valitsee itse alussa
@@ -25,6 +27,7 @@ public class Henkilo {
     //maxHP ilmaisee hahmon maksimikestopisteet. pelin edetessä pistemäärä nousee
     //HP ilmaisee hahmon kestopisteet kyseisellä hetkellä. määrä ei voi olla
     //suurempi kuin maksimiHP
+    
     
     
     
@@ -39,7 +42,7 @@ public class Henkilo {
         }
         this.MaxHP = 100;
         this.HP = 100;
-        this.panssari = 10;
+        this.alkuPanssari = 10;
         this.voima = 20;
         this.lvl = 1;
         this.elava = true;
@@ -58,8 +61,22 @@ public class Henkilo {
         return this.HP;
     }
     
-    public int getPanssari(){
-        return this.panssari;
+    public int getAlkuPanssari(){
+        return this.alkuPanssari;
+    }
+    
+    public int getYhteisPanssari(){
+        
+        return this.alkuPanssari + this.panssari.getPanssariPisteet();
+         
+    }
+    
+    public int getTaso(){
+        return this.lvl;
+    }
+    
+    public Ase getAse(){
+        return this.ase;
     }
     
     //taistelutilanteessa hahmo ottaa itseensä vahinkoa, jolloin vähennetään 
@@ -101,7 +118,15 @@ public class Henkilo {
         this.voima = this.voima + lisaVoima;
         
         }
+        
     }
+        public void lisaaAse(Ase ase){
+        this.ase = ase;
+    }
+        
+        public void lisaaPanssari(Panssari panssari){
+            this.panssari = panssari;
+        }
     
     //kun hahmon taso kasvaa, sen taidot kehittyvät
     
@@ -113,16 +138,19 @@ public class Henkilo {
         
     }
     
+
+    
     
     
     //toString palauttaa arvona hahmon tiedot. 
     //hahmon elossa olevuutta ei näytetä
     public String toString(){
-        return  " " + this.nimi + 
+        return  "\n--------------------\n " + this.nimi + 
                 "\n taso: "+ this.lvl + 
                 "\n HP: " + this.HP + "/" + this.MaxHP + 
-                "\n panssari: " + this.panssari + 
-                "\n voima: " + this.voima;
+                "\n panssari: " + this.alkuPanssari + 
+                "\n voima: " + this.voima +
+                "\n--------------------";
     }
     
 }

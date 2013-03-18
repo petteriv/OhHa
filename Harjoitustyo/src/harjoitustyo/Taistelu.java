@@ -15,9 +15,14 @@ public class Taistelu {
     }
     
     public void taistele(Henkilo lyoja, Henkilo torjuja){
-        int vahinko = lyoja.getVoima() - torjuja.getPanssari();
+        int aseenVahinko = lyoja.getAse().vahinko();
+        int vahinko = lyoja.getVoima() + aseenVahinko - torjuja.getAlkuPanssari();
         
         torjuja.otaVahinkoa(vahinko);
+        System.out.println("\n-- " + lyoja.getNimi() + " aiheuttaa " + vahinko 
+                + " pistettä vahinkoa aseellaan "
+                + lyoja.getAse().getNimi() + " vastustajaan " 
+                + torjuja.getNimi() + "! -- \n");
         
     }
 }
