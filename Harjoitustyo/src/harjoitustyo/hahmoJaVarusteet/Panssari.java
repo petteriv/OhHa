@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package harjoitustyo;
+package harjoitustyo.hahmoJaVarusteet;
 
 /**
  *
@@ -19,6 +19,10 @@ public class Panssari {
     
     public int getPanssariPisteet(){
         return this.panssariPisteet;
+    }
+    
+    public String getNimi(){
+        return this.nimi;
     }
     
 }

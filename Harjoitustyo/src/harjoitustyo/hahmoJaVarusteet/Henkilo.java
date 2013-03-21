@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package harjoitustyo;
+package harjoitustyo.hahmoJaVarusteet;
 
 /**
  *
@@ -146,10 +146,15 @@ public class Henkilo {
     //hahmon elossa olevuutta ei näytetä
     public String toString(){
         return  "\n--------------------\n " + this.nimi + 
-                "\n taso: "+ this.lvl + 
+                "\n Taso: "+ this.lvl + 
                 "\n HP: " + this.HP + "/" + this.MaxHP + 
-                "\n panssari: " + this.alkuPanssari + 
-                "\n voima: " + this.voima +
+                "\n Panssari: " 
+                + this.panssari.getNimi()+ " " + this.alkuPanssari +
+                "(+" + this.panssari.getPanssariPisteet() + ")" + 
+                "\n Voima: " + this.voima + 
+                "\n Ase: " + this.ase.getNimi() +
+                "(+" + this.ase.getPerusVahinko() + ")" +
+                
                 "\n--------------------";
     }
     

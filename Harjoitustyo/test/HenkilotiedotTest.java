@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-import harjoitustyo.Henkilo;
+import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

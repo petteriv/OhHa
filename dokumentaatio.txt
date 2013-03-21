@@ -23,3 +23,10 @@ yhteissummasta vähennetään sitten vastustajan panssaripisteet. Tästä saadaa
 Kirjoitin lisää testejä. Loin ase-olion ja panssari-olion. Monimutkaistin taistelua. 
 En vielä kirjoittanut kommentteja kaikkiin olioihin. Toistaiseksi ohjelma vaikuttaa toimivalta.
 En toisaalta vielä kirjoittanut testejä uusiin olioihin ja toimintoihin. 
+
+21.3.2013
+Aloittelin tekemään graafista käyttöliittymää sovellukselle. En saanut juuri mitään aikaan.
+Jaoin luokkia selkeämmin erillisiin paketteihin selvyyden vuoksi. Oletin että sain aikaan
+alkunäytön jossa hahmo luodaan. En ole varma luoko nappi hahmon oikeasti, mutta ainakaan
+virheilmoituksia ei tullut. En onnistunut kotona saamaan luokkakaaviota gitHubiin, teen
+sen myöhemmin tällä viikolla.

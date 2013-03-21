@@ -4,6 +4,11 @@
  */
 package harjoitustyo;
 
+import harjoitustyo.Kayttoliittyma.Aloitusruutu;
+import harjoitustyo.hahmoJaVarusteet.Panssari;
+import harjoitustyo.hahmoJaVarusteet.Ase;
+import harjoitustyo.hahmoJaVarusteet.Henkilo;
+
 /**
  *
  * @author petteriv
@@ -19,6 +24,8 @@ public class Harjoitustyo {
         Henkilo paaHenkilo = new Henkilo("Pekka");
         Henkilo vihu = new Henkilo("Vihu");
         paaHenkilo.lisaaAse(ase);
+        paaHenkilo.lisaaPanssari(panssari);
+        vihu.lisaaAse(ase);
         vihu.lisaaPanssari(panssari);
         
         
@@ -30,6 +37,12 @@ public class Harjoitustyo {
         
         vihu.tasoKasvaa();
         System.out.println(vihu.toString());
+        
+        System.out.println(paaHenkilo.toString());
+        
+        Aloitusruutu alk = new Aloitusruutu();
+        alk.run();
+        
         
         
         

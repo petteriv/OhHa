@@ -4,6 +4,10 @@
  */
 package harjoitustyo;
 
+import harjoitustyo.hahmoJaVarusteet.Henkilo;
+import harjoitustyo.hahmoJaVarusteet.Ase;
+import harjoitustyo.hahmoJaVarusteet.Panssari;
+
 /**
  *
  * @author petteriv

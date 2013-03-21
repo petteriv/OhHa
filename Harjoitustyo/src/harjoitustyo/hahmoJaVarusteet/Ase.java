@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package harjoitustyo;
+package harjoitustyo.hahmoJaVarusteet;
 
 import java.util.Random;
 
@@ -16,7 +16,10 @@ public class Ase {
     private int perusVahinko;
     private int extraVahinko;
     private int kriittisenIskunTodennakoisyys;
-    
+    //perusvahinko ilmoittaa luvun jonka ase tuottaa vahinkoa joka tapauksessa
+    //extravahinko on vahinko, joka lisätään yhteisvahinkoon, jos ase iskee
+    //kriittisesti. KriittisenIskunTodennäköisyys kertoo todennäköisyyden
+    //kriittiselle iskulle.
     
     public Ase(String nimi, int iskuvoima, int kriittisenIskunTodennakoisyys,
             int extraVahinko){
@@ -43,6 +46,7 @@ public class Ase {
             return false;
         }
     }
+    
     
     public int vahinko(){
         boolean kritti = iskeekoKriittisesti();

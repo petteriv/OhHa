@@ -14,3 +14,7 @@ n.2,5tuntia. Kirjoitin testejä koskien Henkilö-oliota.
 
 n2 tuntia. Kirjoitin taistelusta monimutkaisemman. Kirjoitin jonkin verran testejä.
 kirjoitin myös koodin muutamalle lisä-oliolle. 
+
+21.3.2013
+
+muutama tunti. Aloittelin graafista käyttöliittymää
