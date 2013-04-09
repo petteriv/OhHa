@@ -24,7 +24,7 @@ public class Aloitusruutu implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Luo hahmo");
-        frame.setPreferredSize(new Dimension(300, 300));
+        frame.setPreferredSize(new Dimension(250, 100));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

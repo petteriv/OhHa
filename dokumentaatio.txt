@@ -30,3 +30,7 @@ Jaoin luokkia selkeämmin erillisiin paketteihin selvyyden vuoksi. Oletin että 
 alkunäytön jossa hahmo luodaan. En ole varma luoko nappi hahmon oikeasti, mutta ainakaan
 virheilmoituksia ei tullut. En onnistunut kotona saamaan luokkakaaviota gitHubiin, teen
 sen myöhemmin tällä viikolla.
+
+8.4.2013
+Sain graafista käyttöliittymää toimivammaksi. Ohjelma ei sinänsä vielä tee juuri mitään.
+Tehtävää on vielä paljon, testejä ei ole uusissa luokissa ollenkaan. JavaDoc:seja en ehtinyt vielä aloittamaan. Myös luokkakaaviot odottavat paperilla kotona enkä niitä vieläkään saanut tietokoneelle asti, ensi viikolla viimeistään:D

@@ -4,6 +4,8 @@
  */
 package harjoitustyo.hahmoJaVarusteet;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author petteriv
@@ -19,6 +21,8 @@ public class Henkilo {
     private boolean elava;
     private Ase ase;
     private Panssari panssari;
+    private int x;
+    private int y;
     
     //Tämä olio toimii pohjana kaikkiin pelissä tarvittaviin hahmoihin
     //Olio luodaan valmiiden arvojen pohjalta, pelaaja valitsee itse alussa
@@ -79,6 +83,11 @@ public class Henkilo {
         return this.ase;
     }
     
+    public void sijoita(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+    
     //taistelutilanteessa hahmo ottaa itseensä vahinkoa, jolloin vähennetään 
     //HP:ta.
     public int otaVahinkoa(int vahinko){
@@ -136,6 +145,10 @@ public class Henkilo {
         lisaaMaxHP(20);
         lisaaHP(20);
         
+    }
+    
+    public void piirra(Graphics graphics){
+       graphics.fillOval(x, y, 10, 10);
     }
     
 

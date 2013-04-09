@@ -18,3 +18,7 @@ kirjoitin myös koodin muutamalle lisä-oliolle.
 21.3.2013
 
 muutama tunti. Aloittelin graafista käyttöliittymää
+
+8.3.2012
+
+n5 tuntia. Tuskastuttavaa räpistelyä graafisen käyttöliittymän kanssa.

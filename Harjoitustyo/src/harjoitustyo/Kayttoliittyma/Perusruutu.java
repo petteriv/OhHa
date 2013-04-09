@@ -5,6 +5,7 @@
 package harjoitustyo.Kayttoliittyma;
 
 
+import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -18,15 +19,19 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 public class Perusruutu extends JPanel {
-
-    public Perusruutu(){
+    
+    private Henkilo henkilo;
+    public Perusruutu(Henkilo henkilo){
+        this.henkilo = henkilo;
          super.setBackground(Color.WHITE);
     }
+
+    
      @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         
-        graphics.fillRect(20, 20, 50, 50);
+        henkilo.piirra(graphics);
     }
     
 }
