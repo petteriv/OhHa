@@ -34,3 +34,6 @@ sen myöhemmin tällä viikolla.
 8.4.2013
 Sain graafista käyttöliittymää toimivammaksi. Ohjelma ei sinänsä vielä tee juuri mitään.
 Tehtävää on vielä paljon, testejä ei ole uusissa luokissa ollenkaan. JavaDoc:seja en ehtinyt vielä aloittamaan. Myös luokkakaaviot odottavat paperilla kotona enkä niitä vieläkään saanut tietokoneelle asti, ensi viikolla viimeistään:D
+
+16.4.2013
+luokka-ja sekvenssikaaviot vieläkin uupuvat, samoin javaDocsit. Väkersin käyttöliittymää, mutten saanut sitä vieläkään kunnolliseksi. 

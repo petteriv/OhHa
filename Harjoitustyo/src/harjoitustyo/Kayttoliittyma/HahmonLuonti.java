@@ -30,7 +30,7 @@ public class HahmonLuonti implements ActionListener {
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(paaHenkilo);
         paaHenkilo.lisaaAse(new Ase("Nuija", 10,10,8));
         paaHenkilo.lisaaPanssari(new Panssari("Nahkanuttu", 5));
-        paaHenkilo.sijoita(200, 100);
+        paaHenkilo.sijoita(150, 400);
         SwingUtilities.invokeLater(kayttoliittyma);
         System.out.println("Aloitat pelin hahmolla: " + nimiKentta.getText());
     }

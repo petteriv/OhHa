@@ -7,20 +7,13 @@ package harjoitustyo.Kayttoliittyma;
 
 import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.GridLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 
 public class Perusruutu extends JPanel {
     
     private Henkilo henkilo;
+    private Henkilo uusiHenkilo;
     public Perusruutu(Henkilo henkilo){
         this.henkilo = henkilo;
          super.setBackground(Color.WHITE);
@@ -33,5 +26,13 @@ public class Perusruutu extends JPanel {
         
         henkilo.piirra(graphics);
     }
+     
+    public void piirraUusi(Graphics graphics ,Henkilo henkilo) {
+        this.uusiHenkilo = henkilo;
+        this.uusiHenkilo.sijoita(150, 100);
+        super.paintComponent(graphics);
+        this.uusiHenkilo.piirra(graphics);
+        
+    } 
     
 }

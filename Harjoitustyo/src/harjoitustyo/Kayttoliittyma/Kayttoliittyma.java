@@ -4,7 +4,9 @@
  */
 package harjoitustyo.Kayttoliittyma;
 
+import harjoitustyo.hahmoJaVarusteet.Ase;
 import harjoitustyo.hahmoJaVarusteet.Henkilo;
+import harjoitustyo.hahmoJaVarusteet.Panssari;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -68,10 +70,22 @@ public class Kayttoliittyma implements Runnable {
 
     private JPanel valikkonappulat() {
         JPanel nappulat = new JPanel(new GridLayout(1,3));
+        JButton taistelu = new JButton("Taistele");
+        taisteluruutu taistelua = new taisteluruutu(paaHenkilo,uusiVihu("Reiska"));
+        VihollisenLuonti luonti = new VihollisenLuonti(
+                "Vihu", paaHenkilo,taistelua);
+        nappulat.add(taistelu);
+        taistelu.addActionListener(luonti);
         nappulat.add(new JButton("Kauppa"));
-        nappulat.add(new JButton("Taistele"));
         nappulat.add(new JButton("LVL up"));
         return nappulat;
+    }
+    
+    public Henkilo uusiVihu(String nimi){
+        Henkilo vihu = new Henkilo(nimi);
+        vihu.lisaaAse(new Ase("keppi", 5, 5, 5));
+        vihu.lisaaPanssari(new Panssari("nahkanuttu", 4));
+        return vihu;
     }
 
     private JTextArea vihunTiedot() {

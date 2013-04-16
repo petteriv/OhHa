@@ -19,6 +19,10 @@ kirjoitin myös koodin muutamalle lisä-oliolle.
 
 muutama tunti. Aloittelin graafista käyttöliittymää
 
-8.3.2012
+8.3.2013
 
 n5 tuntia. Tuskastuttavaa räpistelyä graafisen käyttöliittymän kanssa.
+
+16.4.2013
+
+muutama tunti. yritin saada lisää tapahtumaan, osin onnistui, osin ei.

@@ -148,7 +148,7 @@ public class Henkilo {
     }
     
     public void piirra(Graphics graphics){
-       graphics.fillOval(x, y, 10, 10);
+       graphics.fillRect(x, y, 10, 10);
     }
     
 

@@ -7,10 +7,12 @@ package harjoitustyo.Kayttoliittyma;
 import harjoitustyo.hahmoJaVarusteet.Ase;
 import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import harjoitustyo.hahmoJaVarusteet.Panssari;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import java.awt.Graphics;
 
 /**
  *
@@ -18,20 +20,25 @@ import javax.swing.SwingUtilities;
  */
 public class VihollisenLuonti implements ActionListener {
     
-     private JTextField nimiKentta;
+     private String nimi;
+     private Henkilo paaHenkilo;
+     private Component component;
     
-    public VihollisenLuonti(JTextField nimikentta){
-        this.nimiKentta = nimikentta;
+    public VihollisenLuonti(String nimi, Henkilo paaHenkilo, Component component){
+        this.nimi = nimi;
+        this.paaHenkilo = paaHenkilo;
+        this.component = component;
     }
-    
+
+  
     @Override
     public void actionPerformed(ActionEvent e) {
-        Henkilo vihu = new Henkilo(nimiKentta.getText());
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(vihu);
+        Henkilo vihu = new Henkilo(this.nimi);       
         vihu.lisaaAse(new Ase("Nuija", 10,10,8));
         vihu.lisaaPanssari(new Panssari("Nahkanuttu", 5));
-        SwingUtilities.invokeLater(kayttoliittyma);
         
+        
+    
     }
     
     
