@@ -12,10 +12,11 @@ import javax.swing.JPanel;
 
 public class Perusruutu extends JPanel {
     
-    private Henkilo henkilo;
-    private Henkilo uusiHenkilo;
-    public Perusruutu(Henkilo henkilo){
-        this.henkilo = henkilo;
+    private Henkilo paaHenkilo;
+    private Henkilo vihu;
+    public Perusruutu(Henkilo paaHenkilo, Henkilo vihu){
+        this.paaHenkilo = paaHenkilo;
+        this.vihu = vihu;
          super.setBackground(Color.WHITE);
     }
 
@@ -24,15 +25,10 @@ public class Perusruutu extends JPanel {
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         
-        henkilo.piirra(graphics);
+        paaHenkilo.piirra(graphics);
+        vihu.piirra(graphics);
     }
      
-    public void piirraUusi(Graphics graphics ,Henkilo henkilo) {
-        this.uusiHenkilo = henkilo;
-        this.uusiHenkilo.sijoita(150, 100);
-        super.paintComponent(graphics);
-        this.uusiHenkilo.piirra(graphics);
-        
-    } 
-    
+   
+       
 }

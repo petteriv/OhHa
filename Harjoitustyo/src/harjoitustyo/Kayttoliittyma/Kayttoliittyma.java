@@ -28,8 +28,9 @@ public class Kayttoliittyma implements Runnable {
     private Henkilo vihu;
     private boolean taistelussa;
     
-    public Kayttoliittyma(Henkilo henkilo){
-        this.paaHenkilo = henkilo;
+    public Kayttoliittyma(Henkilo paaHenkilo, Henkilo vihu){
+        this.paaHenkilo = paaHenkilo;
+        this.vihu = vihu;
         this.taistelussa = false;
     }
     
@@ -44,11 +45,11 @@ public class Kayttoliittyma implements Runnable {
         luoKomponentit(frame.getContentPane());
 
         frame.pack();
-        frame.setVisible(true); //To change body of generated methods, choose Tools | Templates.
+        frame.setVisible(true); 
     }
 
     private void luoKomponentit(Container container) {
-        Perusruutu perus = new Perusruutu(paaHenkilo);
+        Perusruutu perus = new Perusruutu(paaHenkilo, vihu);
         container.add(perus);
         container.add(sivupalkki(), BorderLayout.EAST);
     }
@@ -70,32 +71,20 @@ public class Kayttoliittyma implements Runnable {
 
     private JPanel valikkonappulat() {
         JPanel nappulat = new JPanel(new GridLayout(1,3));
-        JButton taistelu = new JButton("Taistele");
-        taisteluruutu taistelua = new taisteluruutu(paaHenkilo,uusiVihu("Reiska"));
-        VihollisenLuonti luonti = new VihollisenLuonti(
-                "Vihu", paaHenkilo,taistelua);
-        nappulat.add(taistelu);
-        taistelu.addActionListener(luonti);
+        JButton omatKamat = new JButton("Omat kamat");
+        omatKamat.addActionListener(new KamanVaihdonKuuntelija(paaHenkilo, vihu));
+        nappulat.add(omatKamat);        
         nappulat.add(new JButton("Kauppa"));
         nappulat.add(new JButton("LVL up"));
         return nappulat;
     }
     
-    public Henkilo uusiVihu(String nimi){
-        Henkilo vihu = new Henkilo(nimi);
-        vihu.lisaaAse(new Ase("keppi", 5, 5, 5));
-        vihu.lisaaPanssari(new Panssari("nahkanuttu", 4));
-        return vihu;
-    }
+
 
     private JTextArea vihunTiedot() {
-        return (new JTextArea(""));
-        
-//        if(this.taistelussa = false){
-//            return (new JTextArea(""));
-//        }else{
-//            return (new JTextArea(vihu.toString()));
-//        }
+        JTextArea tietokentta = new JTextArea(vihu.toString());
+        tietokentta.setEnabled(false);
+        return tietokentta;
     }
 
     

@@ -23,8 +23,8 @@ public class Aloitusruutu implements Runnable {
 
     @Override
     public void run() {
-        frame = new JFrame("Luo hahmo");
-        frame.setPreferredSize(new Dimension(250, 100));
+        frame = new JFrame("Luo hahmot");
+        frame.setPreferredSize(new Dimension(250, 200));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,21 +35,32 @@ public class Aloitusruutu implements Runnable {
     
     }
     private void luoKomponentit(Container container) {
-        GridLayout layout = new GridLayout(2, 1);
+        GridLayout layout = new GridLayout(3, 1);
         container.setLayout(layout);
 
-        JLabel nimiTeksti = new JLabel("Nimi: ");
+        JLabel nimiTeksti = new JLabel("Oman hahmon nimi: ");
         JTextField nimiKentta = new JTextField();
+              
         
-
-        JButton lisaaNappi = new JButton("Luo hahmo");
-        HahmonLuonti luoja = new HahmonLuonti(nimiKentta);
+        JLabel nimiTeksti2 = new JLabel("Vihollisen nimi: ");
+        JTextField nimiKentta2 = new JTextField();
+        
+        JButton lisaaNappi = new JButton("Luo hahmot");
+        HahmonLuonti luoja = new HahmonLuonti(nimiKentta, nimiKentta2);
         lisaaNappi.addActionListener(luoja);
+        
 
         container.add(nimiTeksti);
         container.add(nimiKentta);
-        container.add(new JLabel(""));
+        
+        
+        
+        container.add(nimiTeksti2);
+        container.add(nimiKentta2);
+        
         container.add(lisaaNappi);
+        
+   
     }
     
 }

@@ -37,3 +37,6 @@ Tehtävää on vielä paljon, testejä ei ole uusissa luokissa ollenkaan. JavaDo
 
 16.4.2013
 luokka-ja sekvenssikaaviot vieläkin uupuvat, samoin javaDocsit. Väkersin käyttöliittymää, mutten saanut sitä vieläkään kunnolliseksi. 
+
+17.4.2013
+Muutin hieman ohjelman ideaa. Nyt peli on kaksinpeli, jossa molemmat pelaajat ohjaavat yhtä henkilöä. Lisäsin yhden luokkakaavion mukaan.
