@@ -1,4 +1,4 @@
-Aihe: Simppeli roolipeli/seikkailu
+﻿Aihe: Simppeli roolipeli/seikkailu
 
 Ohjelma jossa pelaaja seikkailee yhdellä henkilöllä maailmassa taistellen 
 vihollisia vastaan.
@@ -40,3 +40,6 @@ luokka-ja sekvenssikaaviot vieläkin uupuvat, samoin javaDocsit. Väkersin käyt
 
 17.4.2013
 Muutin hieman ohjelman ideaa. Nyt peli on kaksinpeli, jossa molemmat pelaajat ohjaavat yhtä henkilöä. Lisäsin yhden luokkakaavion mukaan.
+
+20.4.2013
+Lisäsin hahmon liikuttamisen. Javadocsit puuttuvat vielä, sekä suurin osa testeistä
