@@ -1,0 +1,39 @@
+Aihe: Simppeli roolipeli/seikkailu
+
+Ohjelma jossa pelaaja seikkailee yhdellä henkilöllä maailmassa taistellen 
+vihollisia vastaan.
+
+Yhden pelaajan peli.
+
+
+Aloitin luonnostelemaan luokkakaaviota, mutta en toistaiseksi ole aivan varma mitä kaikkea
+haluan ohjelmaan, sekä miten luokat liittyvät toisiinsa. Aloitin ohjelmakoodin kirjoittamisen
+kirjoittamalla Henkilö-olion pohjan valmiiksi. Kyseisen olion pohjalta tulevat toimimaan
+sekä pelin päähenkilö, sekä pelin viholliset. 
+
+13.3.2013
+Sain luokkakaaviota järkevämmän näköiseksi. Tein peliin Taistelu-olion, jonka pohjalta
+pelissä tapahtuvat taistelut toimivat. Olen tähän mennessä ajatellut taistelun toimivan
+henkilön voiman, HP:n, aseen ja panssarin pohjalta. Henkilö aiheuttaa perusvahingon
+voimansa perusteella. Tähän lisätään aseesta riippuen sattumanvarainen luku, mitä parempi
+ase, sitä todennäköisemmin se tekee enemmän vahinkoa. Henkilön voiman ja aseesta saadun luvun 
+yhteissummasta vähennetään sitten vastustajan panssaripisteet. Tästä saadaan luku, joka vähennetään vastustajan HP:sta. Jos vastustajan HP laskee alle 0, vastustaja kuolee. Tämä toteutetaan boolean-arvolla, jolloin Henkilo-olion elävyys-arvo vaihtuu falseksi. Jos tämä tapahtuu päähenkilölle, peli loppuu. Mahdollisesti myöhemmin peliä on vielä mahdollisuus jatkaa jos tälläisen toiminnnon aikaansaamiseen on mahdollisuus. 
+
+18.3.2013
+Kirjoitin lisää testejä. Loin ase-olion ja panssari-olion. Monimutkaistin taistelua. 
+En vielä kirjoittanut kommentteja kaikkiin olioihin. Toistaiseksi ohjelma vaikuttaa toimivalta.
+En toisaalta vielä kirjoittanut testejä uusiin olioihin ja toimintoihin. 
+
+21.3.2013
+Aloittelin tekemään graafista käyttöliittymää sovellukselle. En saanut juuri mitään aikaan.
+Jaoin luokkia selkeämmin erillisiin paketteihin selvyyden vuoksi. Oletin että sain aikaan
+alkunäytön jossa hahmo luodaan. En ole varma luoko nappi hahmon oikeasti, mutta ainakaan
+virheilmoituksia ei tullut. En onnistunut kotona saamaan luokkakaaviota gitHubiin, teen
+sen myöhemmin tällä viikolla.
+
+8.4.2013
+Sain graafista käyttöliittymää toimivammaksi. Ohjelma ei sinänsä vielä tee juuri mitään.
+Tehtävää on vielä paljon, testejä ei ole uusissa luokissa ollenkaan. JavaDoc:seja en ehtinyt vielä aloittamaan. Myös luokkakaaviot odottavat paperilla kotona enkä niitä vieläkään saanut tietokoneelle asti, ensi viikolla viimeistään:D
+
+16.4.2013
+luokka-ja sekvenssikaaviot vieläkin uupuvat, samoin javaDocsit. Väkersin käyttöliittymää, mutten saanut sitä vieläkään kunnolliseksi. 
