@@ -88,6 +88,16 @@ public class Henkilo {
         this.y = y;
     }
     
+    public void siirra(int x, int y) {
+        this.x = this.x + x;
+        if(this.x >280){
+            this.x = 280;
+        }else if(this.x<0){
+            this.x = 0;
+        }
+        this.y = this.y + y;
+    }
+    
     //taistelutilanteessa hahmo ottaa itseensä vahinkoa, jolloin vähennetään 
     //HP:ta.
     public int otaVahinkoa(int vahinko){
