@@ -38,6 +38,14 @@ public class Ase {
         return this.perusVahinko;
     }
     
+    public int getKritTodNak(){
+        return this.kriittisenIskunTodennakoisyys;
+    }
+    
+    public int getExtraVahinko(){
+        return this.extraVahinko;
+    }
+    
     public boolean iskeekoKriittisesti(){
         if(random.nextInt(100) 
                 < this.kriittisenIskunTodennakoisyys){
