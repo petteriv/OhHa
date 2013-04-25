@@ -19,6 +19,8 @@ public class Taistelu {
     private int vahinko;
     private Selostusruutu selostus;
     
+   
+    
     public Taistelu(){
        
     }

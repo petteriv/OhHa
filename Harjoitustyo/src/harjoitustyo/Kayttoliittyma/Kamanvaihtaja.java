@@ -23,10 +23,15 @@ public class Kamanvaihtaja implements Runnable {
     private JFrame frame;
     private Henkilo vihu;
     private ArrayList<Ase> tavaralista;
+<<<<<<< HEAD
     private Selostusruutu selostus;
     
     public Kamanvaihtaja(Selostusruutu selostus, Henkilo henkilo, Henkilo vihu){
         this.selostus = selostus;
+=======
+    
+    public Kamanvaihtaja( Henkilo henkilo, Henkilo vihu){
+>>>>>>> aa7adcbc788dfad65b88794c7fc2ff26b54401b7
         this.henkilo = henkilo;
         this.vihu = vihu;
         tavaralista = new ArrayList<Ase>();
@@ -66,8 +71,12 @@ public class Kamanvaihtaja implements Runnable {
             JButton lisaaAseVihulle = new JButton("Aseta ase vihulle");
             
             JButton lisaaAseItselle = new JButton("Aseta ase itselle");
+<<<<<<< HEAD
             lisaaAseItselle.addActionListener(
                     new AseenAsettajaKuuntelija(frame, selostus, ase, henkilo, vihu));
+=======
+            lisaaAseItselle.addActionListener(new AseenAsettajaKuuntelija(ase, henkilo, vihu));
+>>>>>>> aa7adcbc788dfad65b88794c7fc2ff26b54401b7
             palkki.add(tietokentta);
             palkki.add(lisaaAseItselle);
             palkki.add(lisaaAseVihulle);
