@@ -54,6 +54,10 @@ public class Ase {
     }
     
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+>>>>>>> aa7adcbc788dfad65b88794c7fc2ff26b54401b7
     /**
      * metodi arpoo luvun 0 ja 100 väliltä. metodi palauttaa joko true tai
      * false, riippuen onko arvottu numero suurempi vai pienempi kuin 
@@ -61,8 +65,13 @@ public class Ase {
      * @return palauttaa true jos arvottu luku on pienempi kuin aseen kriittisen 
      * iskun todennäköisyys. Muuten palautuu false.
      */
+<<<<<<< HEAD
+
+
+=======
 =======
 >>>>>>> 88e331c56019c65d39090f90edf456408cd2b095
+>>>>>>> aa7adcbc788dfad65b88794c7fc2ff26b54401b7
     public boolean iskeekoKriittisesti(){
         if(random.nextInt(100) 
                 < this.kriittisenIskunTodennakoisyys){

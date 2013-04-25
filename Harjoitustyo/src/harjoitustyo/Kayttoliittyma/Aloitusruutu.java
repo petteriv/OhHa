@@ -46,7 +46,7 @@ public class Aloitusruutu implements Runnable {
         JTextField nimiKentta2 = new JTextField();
         
         JButton lisaaNappi = new JButton("Luo hahmot");
-        HahmonLuonti luoja = new HahmonLuonti(nimiKentta, nimiKentta2);
+        HahmonLuonti luoja = new HahmonLuonti(frame, nimiKentta, nimiKentta2);
         lisaaNappi.addActionListener(luoja);
         
 

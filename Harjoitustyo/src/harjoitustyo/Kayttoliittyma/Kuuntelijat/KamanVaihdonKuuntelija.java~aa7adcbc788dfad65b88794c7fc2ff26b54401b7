@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package harjoitustyo.Kayttoliittyma;
+package harjoitustyo.Kayttoliittyma.Kuuntelijat;
 
+import harjoitustyo.Kayttoliittyma.Kamanvaihtaja;
 import harjoitustyo.hahmoJaVarusteet.Ase;
 import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import harjoitustyo.hahmoJaVarusteet.Panssari;
@@ -13,30 +14,33 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import java.awt.Graphics;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 /**
  *
  * @author DemPetteri
  */
-public class VihollisenLuonti implements ActionListener {
+public class KamanVaihdonKuuntelija implements ActionListener {
     
-     private String nimi;
+     
      private Henkilo paaHenkilo;
-     private Component component;
+     private Henkilo vihu;
+     
     
-    public VihollisenLuonti(String nimi, Henkilo paaHenkilo, Component component){
-        this.nimi = nimi;
+    public KamanVaihdonKuuntelija(Henkilo paaHenkilo, Henkilo vihu){
+        
         this.paaHenkilo = paaHenkilo;
-        this.component = component;
+        this.vihu = vihu;
+        
     }
 
   
     @Override
     public void actionPerformed(ActionEvent e) {
-        Henkilo vihu = new Henkilo(this.nimi);       
-        vihu.lisaaAse(new Ase("Nuija", 10,10,8));
-        vihu.lisaaPanssari(new Panssari("Nahkanuttu", 5));
+        Kamanvaihtaja vaihtis = new Kamanvaihtaja(this.paaHenkilo, this.vihu);
         
+        SwingUtilities.invokeLater(vaihtis);
         
     
     }

@@ -32,8 +32,10 @@ public class Kayttoliittyma implements Runnable {
     private Henkilo vihu;
     private boolean taistelussa;
     private Perusruutu perus;
+    private Selostusruutu selostus;
     
-    public Kayttoliittyma(Henkilo paaHenkilo, Henkilo vihu){
+    public Kayttoliittyma(Selostusruutu selostus, Henkilo paaHenkilo, Henkilo vihu){
+        this.selostus = selostus;
         this.paaHenkilo = paaHenkilo;
         this.vihu = vihu;
         this.taistelussa = false;
@@ -52,6 +54,7 @@ public class Kayttoliittyma implements Runnable {
 
         frame.pack();
         frame.setVisible(true); 
+        frame.repaint();
     }
 
     private void luoKomponentit(Container container) {
@@ -60,6 +63,10 @@ public class Kayttoliittyma implements Runnable {
         frame.addKeyListener(new nappaintenKuuntelija(paaHenkilo, vihu, perus));
         container.add(sivupalkki(), BorderLayout.EAST);
         
+<<<<<<< HEAD
+        
+=======
+>>>>>>> aa7adcbc788dfad65b88794c7fc2ff26b54401b7
        
     }
     private JPanel sivupalkki(){
@@ -72,18 +79,23 @@ public class Kayttoliittyma implements Runnable {
         return palkki;
     }
     
+    
+    
     private JTextArea paaHenkilonTiedot(){
         JTextArea tietokentta = new JTextArea(paaHenkilo.toString());
         tietokentta.setEnabled(false);
-        
-        
         return tietokentta;
+    }
+    
+    private void updateTiedot(){
+        paaHenkilonTiedot().setText(paaHenkilo.toString());
+        vihunTiedot().setText(vihu.toString());
     }
 
     private JPanel valikkonappulat() {
         JPanel nappulat = new JPanel(new GridLayout(3,1));
-        JButton omatKamat = new JButton("Omat kamat");
-        omatKamat.addActionListener(new KamanVaihdonKuuntelija(paaHenkilo, vihu));
+        JButton omatKamat = new JButton("Aselista");
+        omatKamat.addActionListener(new KamanVaihdonKuuntelija(selostus, frame, paaHenkilo, vihu));
         nappulat.add(omatKamat); 
         nappulat.add(liikkumisnapit());
         nappulat.add(new JButton("LVL up"));
@@ -101,6 +113,18 @@ public class Kayttoliittyma implements Runnable {
         JButton vasenAlas = new JButton("<V");
         JButton alas = new JButton("V");
         JButton oikeaAlas = new JButton("V>");
+<<<<<<< HEAD
+                
+        tappele.addActionListener(new tappelunkuuntelija(selostus,frame, this.paaHenkilo, this.vihu, paaHenkilonTiedot(), vihunTiedot()));
+        vasenYlos.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, -20, -20));
+        ylos.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 0, -20));
+        oikeaYlos.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 20, -20));
+        vasen.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, -20, 0));
+        oikea.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 20, 0));
+        vasenAlas.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, -20, 20));
+        alas.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 0, 20));
+        oikeaAlas.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 20, 20));
+=======
         tappele.addActionListener(new tappelunkuuntelija(this.paaHenkilo, this.vihu));
         vasenYlos.addActionListener(new Liikkumisenkuuntelija(paaHenkilo,vihu, perus, -20, -20));
         ylos.addActionListener(new Liikkumisenkuuntelija(paaHenkilo,vihu, perus, 0, -20));
@@ -110,6 +134,7 @@ public class Kayttoliittyma implements Runnable {
         vasenAlas.addActionListener(new Liikkumisenkuuntelija(paaHenkilo,vihu, perus, -20, 20));
         alas.addActionListener(new Liikkumisenkuuntelija(paaHenkilo,vihu, perus, 0, 20));
         oikeaAlas.addActionListener(new Liikkumisenkuuntelija(paaHenkilo,vihu, perus, 20, 20));
+>>>>>>> aa7adcbc788dfad65b88794c7fc2ff26b54401b7
         napit.add(vasenYlos);
         napit.add(ylos);
         napit.add(oikeaYlos);

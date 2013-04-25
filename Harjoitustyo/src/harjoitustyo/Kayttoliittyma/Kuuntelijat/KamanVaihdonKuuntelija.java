@@ -5,6 +5,7 @@
 package harjoitustyo.Kayttoliittyma.Kuuntelijat;
 
 import harjoitustyo.Kayttoliittyma.Kamanvaihtaja;
+import harjoitustyo.Kayttoliittyma.Selostusruutu;
 import harjoitustyo.hahmoJaVarusteet.Ase;
 import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import harjoitustyo.hahmoJaVarusteet.Panssari;
@@ -14,6 +15,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import java.awt.Graphics;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
@@ -26,19 +28,25 @@ public class KamanVaihdonKuuntelija implements ActionListener {
      
      private Henkilo paaHenkilo;
      private Henkilo vihu;
+     private JFrame frame;
+     private Selostusruutu selostus;
      
     
-    public KamanVaihdonKuuntelija(Henkilo paaHenkilo, Henkilo vihu){
+    public KamanVaihdonKuuntelija(Selostusruutu selostus, JFrame frame, Henkilo paaHenkilo, Henkilo vihu){
         
+        this.frame = frame;
         this.paaHenkilo = paaHenkilo;
         this.vihu = vihu;
+        this.selostus = selostus;
         
     }
 
   
     @Override
     public void actionPerformed(ActionEvent e) {
-        Kamanvaihtaja vaihtis = new Kamanvaihtaja(this.paaHenkilo, this.vihu);
+        
+        this.frame.dispose();
+        Kamanvaihtaja vaihtis = new Kamanvaihtaja(this.selostus,this.paaHenkilo, this.vihu);
         
         SwingUtilities.invokeLater(vaihtis);
         
