@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package harjoitustyo.hahmoJaVarusteet;
 
 import java.util.Random;
@@ -16,17 +20,6 @@ public class Ase {
     //extravahinko on vahinko, joka lisätään yhteisvahinkoon, jos ase iskee
     //kriittisesti. KriittisenIskunTodennäköisyys kertoo todennäköisyyden
     //kriittiselle iskulle.
-    
-    /*'
-     * Olion Ase konstruktori
-     * 
-     * @param nimi              Aseelle annettava nimi
-     * @param iskuvoima         Aseen perusvahinko
-     * @param kriittisenIskunTodennakoisyys todennäköisyys kriittiselle 
-     * iskulle lukuna 0-100
-     * @param extraVahinko      Aseen iskiessä kriittisesti lisätään vahinkoon tämä
-     * 
-     */
     
     public Ase(String nimi, int iskuvoima, int kriittisenIskunTodennakoisyys,
             int extraVahinko){
@@ -53,13 +46,6 @@ public class Ase {
         return this.extraVahinko;
     }
     
-    /**
-     * metodi arpoo luvun 0 ja 100 väliltä. metodi palauttaa joko true tai
-     * false, riippuen onko arvottu numero suurempi vai pienempi kuin 
-     * this.kriittisenIskunTodennkoisyys
-     * @return palauttaa true jos arvottu luku on pienempi kuin aseen kriittisen 
-     * iskun todennäköisyys. Muuten palautuu false.
-     */
     public boolean iskeekoKriittisesti(){
         if(random.nextInt(100) 
                 < this.kriittisenIskunTodennakoisyys){
@@ -69,25 +55,14 @@ public class Ase {
         }
     }
     
-    /**
-     * metodi palauttaa aseen aiheuttaman vahingon tarkistaen käyttäen metodia 
-     * iskeekoKriittisesti()
-     * @return palauttaa aseen aiheuttaman vahingon. Jos ase iskee kriittisesti,
-     * arvotaan mukaan aseen extraVahinko
-     */
+    
     public int vahinko(){
-        if(iskeekoKriittisesti()){
-        return this.perusVahinko + random.nextInt(extraVahinko);
+        boolean kritti = iskeekoKriittisesti();
+        if(kritti = true){
+        return this.perusVahinko + 5 + random.nextInt(extraVahinko);
     }else{
             return this.perusVahinko;
         }
-    }
-    
-    @Override
-    public String toString(){
-        return this.nimi + "(" + this.perusVahinko + ")(%" 
-                + this.kriittisenIskunTodennakoisyys + ")(+" 
-                + this.extraVahinko + ")"; 
     }
     
 }

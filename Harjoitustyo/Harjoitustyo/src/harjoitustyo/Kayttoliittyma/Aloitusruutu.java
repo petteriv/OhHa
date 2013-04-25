@@ -26,7 +26,7 @@ public class Aloitusruutu implements Runnable {
         frame = new JFrame("Luo hahmot");
         frame.setPreferredSize(new Dimension(250, 200));
 
-        
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luoKomponentit(frame.getContentPane());
 

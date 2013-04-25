@@ -14,10 +14,8 @@ import harjoitustyo.hahmoJaVarusteet.Panssari;
  */
 public class Taistelu {
     
-   
-    
     public Taistelu(){
-       
+        
     }
     
     public void taistele(Henkilo lyoja, Henkilo torjuja){

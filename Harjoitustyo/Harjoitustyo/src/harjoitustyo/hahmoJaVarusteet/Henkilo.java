@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package harjoitustyo.hahmoJaVarusteet;
 
 import java.awt.Graphics;
@@ -47,11 +51,12 @@ public class Henkilo {
         this.lvl = 1;
         this.elava = true;
     }
-    
+    //kun tarvitaan hahmon nimeä, kutsutaan tätä metodia
     public String getNimi(){
         return this.nimi;
     }
-
+     //kun pelissä päästään taistelutilanteeseen, hahmo aiheuttaa vastustajaansa
+    //vahinkoa voimansa verran.
     public int getVoima(){
         return this.voima;
     }
@@ -78,28 +83,11 @@ public class Henkilo {
         return this.ase;
     }
     
-    public int getX(){
-        return this.x;
-    }
-    
-    public int getY(){
-        return this.y;
-    }
-    
-    /**
-     * metodin avulla hahmon voi sijoittaa ruudulla
-     * @param x
-     * @param y 
-     */
     public void sijoita(int x, int y){
         this.x = x;
         this.y = y;
     }
-    /**
-     * metodin avulla hahmoa voi liikuttaa ruudulla.
-     * @param x luku kuinka paljon hahmo liikkuu sivuttaissuunnassa
-     * @param y luku kuinka paljon hahmo liikkuu pystysuunnassa
-     */
+    
     public void siirra(int x, int y) {
         this.x = this.x + x;
         if(this.x >280){
@@ -107,39 +95,26 @@ public class Henkilo {
         }else if(this.x<0){
             this.x = 0;
         }
-         this.y = this.y + y;
-        if(this.y < 0){
-            this.y = 0;
-        }else if(this.y >500){
-            this.y = 500;
-        }
+        this.y = this.y + y;
     }
     
-    /**
-     * metodi vähentää hahmolta elämänpisteitä. Tarkistaa vähennyksen 
-     * jälkeen kuoliko hahmo
-     * @param vahinko kuinka paljon vahinkoa hahmo ottaa
-     * @return palauttaa jäljellä olevan hp:n määrän
-     */
+    //taistelutilanteessa hahmo ottaa itseensä vahinkoa, jolloin vähennetään 
+    //HP:ta.
     public int otaVahinkoa(int vahinko){
         this.HP = this.HP - vahinko;
         tarkistaKuolema();
         return this.HP;
     }
-    /**
-     * tarkistaa onko hahmo kuollut, eli onko HP 0 tai vähemmän
-     * @return palauttaa joko true tai false riippuen onko hahmo kuollut
-     */
+    //kun hahmon HP laskee 0 tai sen alle, hahmo kuolee. Eli this.elava vaihtuu
+    //falseksi.
     public boolean tarkistaKuolema(){
         if(this.HP<=0){
             this.elava = false;
         }
         return this.elava;
     }
-    /**
-     * metodi lisää hahmolle HP.ta. 
-     * @param lisaHP lisättävän HP:n määrä
-     */
+    //Parannukset ja kehittyminen palauttaa HP.ta
+    //HP ei voi kasvaa yli maksimiHP:n
     
     public void lisaaHP(int lisaHP){
         this.HP = this.HP + lisaHP;
@@ -148,18 +123,13 @@ public class Henkilo {
         }
         
     }
-    /**
-     * metodi kasvattaa HP:n maksimimäärää
-     * @param lisaHP määrä jolla maksimiHP kasvaa
-     */
+    
     public void lisaaMaxHP(int lisaHP){
         this.MaxHP = this.MaxHP + lisaHP;
     }
     
-    /**
-     * metodi lisää hahmon voimaa
-     * @param lisaVoima määrä jolla voima kasvaa
-     */
+    //hahmon kehittyessä voima lisääntyy
+    
     public void lisaaVoimaa(int lisaVoima){
         if(lisaVoima<=0){
             
@@ -168,25 +138,16 @@ public class Henkilo {
         
         }
         
-        /**
-         * metodi jolla lisätään hahmolle ase
-         * @param Ase Ase-olio toimii parametrinä
-         */
     }
         public void lisaaAse(Ase ase){
         this.ase = ase;
     }
-        /**
-        * metodi jolla liitetään hahmoon panssari
-        * @param panssari parametrinä panssari
-        */
+        
         public void lisaaPanssari(Panssari panssari){
             this.panssari = panssari;
         }
     
-    /**
-     * metodi kasvattaa hahmon tasoa ja sen kykyjä
-     */
+    //kun hahmon taso kasvaa, sen taidot kehittyvät
     
     public void tasoKasvaa(){
         this.lvl++;
@@ -195,25 +156,19 @@ public class Henkilo {
         lisaaHP(20);
         
     }
-    /**
-     * metodi graafista käyttöliittymää varten. Piirtää
-     * @param graphics 
-     */
+    
     public void piirra(Graphics graphics){
-       graphics.fillRect(x, y, 20, 20);
+       graphics.fillRect(x, y, 10, 10);
     }
     
 
     
     
     
-    /**
-     * metodi palauttaa hahmon tiedot
-     * @return palauttaa tekstinä tiedot
-     */
-    @Override
+    //toString palauttaa arvona hahmon tiedot. 
+    //hahmon elossa olevuutta ei näytetä
     public String toString(){
-        return  "\n----------------------------\n " + this.nimi + 
+        return  "\n--------------------\n " + this.nimi + 
                 "\n Taso: "+ this.lvl + 
                 "\n HP: " + this.HP + "/" + this.MaxHP + 
                 "\n Panssari: " 
@@ -223,7 +178,7 @@ public class Henkilo {
                 "\n Ase: " + this.ase.getNimi() +
                 "(+" + this.ase.getPerusVahinko() + ")" +
                 
-                "\n----------------------------";
+                "\n--------------------";
     }
     
 }

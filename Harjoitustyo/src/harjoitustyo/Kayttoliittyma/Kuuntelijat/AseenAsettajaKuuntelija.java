@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package harjoitustyo.Kayttoliittyma;
+package harjoitustyo.Kayttoliittyma.Kuuntelijat;
 
+import harjoitustyo.Kayttoliittyma.Kayttoliittyma;
 import harjoitustyo.hahmoJaVarusteet.Ase;
 import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import java.awt.event.ActionEvent;
