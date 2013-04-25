@@ -4,6 +4,10 @@
  */
 package harjoitustyo.Kayttoliittyma;
 
+import harjoitustyo.Kayttoliittyma.Kuuntelijat.Liikkumisenkuuntelija;
+import harjoitustyo.Kayttoliittyma.Kuuntelijat.KamanVaihdonKuuntelija;
+import harjoitustyo.Kayttoliittyma.Kuuntelijat.tappelunkuuntelija;
+import harjoitustyo.Kayttoliittyma.Kuuntelijat.nappaintenKuuntelija;
 import harjoitustyo.hahmoJaVarusteet.Ase;
 import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import harjoitustyo.hahmoJaVarusteet.Panssari;
@@ -28,8 +32,10 @@ public class Kayttoliittyma implements Runnable {
     private Henkilo vihu;
     private boolean taistelussa;
     private Perusruutu perus;
+    private Selostusruutu selostus;
     
-    public Kayttoliittyma(Henkilo paaHenkilo, Henkilo vihu){
+    public Kayttoliittyma(Selostusruutu selostus, Henkilo paaHenkilo, Henkilo vihu){
+        this.selostus = selostus;
         this.paaHenkilo = paaHenkilo;
         this.vihu = vihu;
         this.taistelussa = false;
@@ -42,20 +48,23 @@ public class Kayttoliittyma implements Runnable {
         frame = new JFrame("TOIMII");
         frame.setPreferredSize(new Dimension(600, 600));
 
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
 
         luoKomponentit(frame.getContentPane());
 
         frame.pack();
         frame.setVisible(true); 
+        frame.repaint();
     }
 
     private void luoKomponentit(Container container) {
         perus = new Perusruutu(paaHenkilo, vihu);
         container.add(perus);
+        frame.addKeyListener(new nappaintenKuuntelija(paaHenkilo, vihu, perus));
         container.add(sivupalkki(), BorderLayout.EAST);
         
-        frame.addKeyListener(new nappaintenKuuntelija(paaHenkilo, vihu, perus));
+        
+       
     }
     private JPanel sivupalkki(){
         JPanel palkki = new JPanel(new GridLayout(3,1));
@@ -66,18 +75,23 @@ public class Kayttoliittyma implements Runnable {
         return palkki;
     }
     
+    
+    
     private JTextArea paaHenkilonTiedot(){
         JTextArea tietokentta = new JTextArea(paaHenkilo.toString());
         tietokentta.setEnabled(false);
-        
-        
         return tietokentta;
+    }
+    
+    private void updateTiedot(){
+        paaHenkilonTiedot().setText(paaHenkilo.toString());
+        vihunTiedot().setText(vihu.toString());
     }
 
     private JPanel valikkonappulat() {
         JPanel nappulat = new JPanel(new GridLayout(3,1));
-        JButton omatKamat = new JButton("Omat kamat");
-        omatKamat.addActionListener(new KamanVaihdonKuuntelija(paaHenkilo, vihu));
+        JButton omatKamat = new JButton("Aselista");
+        omatKamat.addActionListener(new KamanVaihdonKuuntelija(selostus, frame, paaHenkilo, vihu));
         nappulat.add(omatKamat); 
         nappulat.add(liikkumisnapit());
         nappulat.add(new JButton("LVL up"));
@@ -95,14 +109,16 @@ public class Kayttoliittyma implements Runnable {
         JButton vasenAlas = new JButton("<V");
         JButton alas = new JButton("V");
         JButton oikeaAlas = new JButton("V>");
-        vasenYlos.addActionListener(new Liikkumisenkuuntelija(paaHenkilo, perus, -20, -20));
-        ylos.addActionListener(new Liikkumisenkuuntelija(paaHenkilo, perus, 0, -20));
-        oikeaYlos.addActionListener(new Liikkumisenkuuntelija(paaHenkilo, perus, 20, -20));
-        vasen.addActionListener(new Liikkumisenkuuntelija(paaHenkilo, perus, -20, 0));
-        oikea.addActionListener(new Liikkumisenkuuntelija(paaHenkilo, perus, 20, 0));
-        vasenAlas.addActionListener(new Liikkumisenkuuntelija(paaHenkilo, perus, -20, 20));
-        alas.addActionListener(new Liikkumisenkuuntelija(paaHenkilo, perus, 0, 20));
-        oikeaAlas.addActionListener(new Liikkumisenkuuntelija(paaHenkilo, perus, 20, 20));
+                
+        tappele.addActionListener(new tappelunkuuntelija(selostus,frame, this.paaHenkilo, this.vihu, paaHenkilonTiedot(), vihunTiedot()));
+        vasenYlos.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, -20, -20));
+        ylos.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 0, -20));
+        oikeaYlos.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 20, -20));
+        vasen.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, -20, 0));
+        oikea.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 20, 0));
+        vasenAlas.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, -20, 20));
+        alas.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 0, 20));
+        oikeaAlas.addActionListener(new Liikkumisenkuuntelija(selostus,paaHenkilo,vihu, perus, 20, 20));
         napit.add(vasenYlos);
         napit.add(ylos);
         napit.add(oikeaYlos);
@@ -123,6 +139,10 @@ public class Kayttoliittyma implements Runnable {
         JTextArea tietokentta = new JTextArea(vihu.toString());
         tietokentta.setEnabled(false);
         return tietokentta;
+    }
+    
+    public JFrame getFrame() {
+        return frame;
     }
 
     

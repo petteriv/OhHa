@@ -26,7 +26,7 @@ public class Aloitusruutu implements Runnable {
         frame = new JFrame("Luo hahmot");
         frame.setPreferredSize(new Dimension(250, 200));
 
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
 
         luoKomponentit(frame.getContentPane());
 
@@ -46,7 +46,7 @@ public class Aloitusruutu implements Runnable {
         JTextField nimiKentta2 = new JTextField();
         
         JButton lisaaNappi = new JButton("Luo hahmot");
-        HahmonLuonti luoja = new HahmonLuonti(nimiKentta, nimiKentta2);
+        HahmonLuonti luoja = new HahmonLuonti(frame, nimiKentta, nimiKentta2);
         lisaaNappi.addActionListener(luoja);
         
 

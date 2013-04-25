@@ -83,14 +83,6 @@ public class Henkilo {
         return this.ase;
     }
     
-    public int getX(){
-        return this.x;
-    }
-    
-    public int getY(){
-        return this.y;
-    }
-    
     public void sijoita(int x, int y){
         this.x = x;
         this.y = y;
@@ -104,11 +96,6 @@ public class Henkilo {
             this.x = 0;
         }
         this.y = this.y + y;
-        if(this.y < 0){
-            this.y = 0;
-        }else if(this.y >500){
-            this.y = 500;
-        }
     }
     
     //taistelutilanteessa hahmo ottaa itseensä vahinkoa, jolloin vähennetään 
@@ -171,7 +158,7 @@ public class Henkilo {
     }
     
     public void piirra(Graphics graphics){
-       graphics.fillRect(x, y, 20, 20);
+       graphics.fillRect(x, y, 10, 10);
     }
     
 

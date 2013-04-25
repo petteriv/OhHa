@@ -4,6 +4,7 @@
  */
 package harjoitustyo;
 
+import harjoitustyo.Kayttoliittyma.Selostusruutu;
 import harjoitustyo.hahmoJaVarusteet.Henkilo;
 import harjoitustyo.hahmoJaVarusteet.Ase;
 import harjoitustyo.hahmoJaVarusteet.Panssari;
@@ -13,20 +14,35 @@ import harjoitustyo.hahmoJaVarusteet.Panssari;
  * @author petteriv
  */
 public class Taistelu {
+    private Henkilo lyoja;
+    private Henkilo torjuja;
+    private int vahinko;
+    private Selostusruutu selostus;
     
     public Taistelu(){
-        
+       
     }
     
-    public void taistele(Henkilo lyoja, Henkilo torjuja){
+    public void taistele(Selostusruutu selostus, Henkilo lyoja, Henkilo torjuja){
+        this.selostus = selostus;
+        this.lyoja = lyoja;
+        this.torjuja = torjuja;
         int aseenVahinko = lyoja.getAse().vahinko();
-        int vahinko = lyoja.getVoima() + aseenVahinko - torjuja.getAlkuPanssari();
+        this.vahinko = lyoja.getVoima() + aseenVahinko - torjuja.getAlkuPanssari();
         
-        torjuja.otaVahinkoa(vahinko);
+        torjuja.otaVahinkoa(this.vahinko);
         System.out.println("\n-- " + lyoja.getNimi() + " aiheuttaa " + vahinko 
                 + " pistettä vahinkoa aseellaan "
                 + lyoja.getAse().getNimi() + " vastustajaan " 
                 + torjuja.getNimi() + "! -- \n");
+        this.selostus.lisaaTekstia(selosta());
         
     }
+    public String selosta(){
+        return "\n-- " + lyoja.getNimi() + " aiheuttaa " + vahinko 
+                + " pistettä vahinkoa aseellaan "
+                + lyoja.getAse().getNimi() + " vastustajaan " 
+                + torjuja.getNimi() + "! -- \n";
+    }
+    
 }
