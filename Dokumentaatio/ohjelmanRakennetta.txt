@@ -1,0 +1,10 @@
+﻿OHjelman auetessa tulee esiin aloitusruutu, jossa annetaan nimet itselleen sekä viholliselle. 
+Kun painetaan nappia "luo hahmot", Hahmojenluonti-luokka luo kaksi Henkilo-oliota. Tästä siirrytään itse 
+pääruutuun, jossa käyttöliittymä avaa peliruudun, sekä selostusruudun. Selostusruutu pitää pelaajan ajan tasalla
+mitä pelissä tapahtuu. Käyttöliittymän kautta vaihdetaan Henkilö-olioiden varustusta. Varusteita on kahdenlaisia:
+Ase-olioita ja Panssari-olioita. Henkilo-oliot pitävät itse sisällään metodin, jonka avulla niihin voi liittää 
+varusteita. Käyttöliittymän kautta päästään myösTaistelu-olioon, jonka avulla Henkilo-oliot taistelevat keskenään.
+ Taistelu-olio laskee yhteisvahingon määrän Henkilo-olioiden varusteiden perusteella ja vähentää sen mukaan 
+puolustavalta Henkilo-oliolta HP:ta. 
+
+Pääruudun alalaidassa on koko ajan vaihtoehto sulkea peli.

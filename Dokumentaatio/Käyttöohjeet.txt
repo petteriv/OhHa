@@ -1,0 +1,9 @@
+KÄYTTÖOHJEET
+
+HUOM! PELIN SULKEUTUU AINOASTAAN -LOPETA PELI- PAINIKETTA PAINAMALLA!!
+
+pelin alussa voit antaa omalle hahmollesi, sekä vihollisellesi nimet. 
+Tämän jälkeen luo hahmot-painikkeen jälkeen avautuu perusnäkymä. Pystyt liikuttelemaan hahmoasi tarjotuilla
+liikkumisnäppäimillä. Pystyt myös vaihtamaan varusteitasi Aselista ja Panssarilista-napeista. Kun olet tarpeeksi
+lähellä, voit lyödä vihollista. Varo, vihollinen ei anna armoa! Peli päättyy kun olet saanut vihollisen hengiltä 
+tai se on saanut sinut. Voit valita uuden pelin, tai sulkea pelin. 

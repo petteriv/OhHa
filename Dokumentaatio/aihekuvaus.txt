@@ -1,0 +1,5 @@
+﻿Peli on yhden pelaajan taistelupeli, jossa taistellaan tietokonetta vastaan. Pelin ideana on saada vastustaja hengiltä ennenkuin vastustaja saa pelaajan hengiltä.
+Pelissä voi lisätä itselleen ja vastustajalle erilaisia varusteita tehden taistelusta erilaista. Vihollinen liikkuu lähes koko ajan pelaajaa kohti yrittäen saada tämän hengiltä.
+Peli päättyy joko siihen, että pelaajan hahmo on kuollut, tai vastustaja on kuollut. Tämän jälkeen on vaihtoehto aloittaa uusi peli, tai sulkea peli. Pelaaja liikuttaa hahmoaan pelin
+tarjoamilla liikkumisnapeilla. Aina kun pelaaja liikuttaa hahmoaan, myös vastustaja liikkuu. (paitsi jos pelaaja liikkuu suoraan kohti vastustajaa, tai siitä poispäin). Tarpeeksi lähelle
+saapuessa tulee mahdollisuus lyödä vastustajaa. Vastustaja myös automaattisesti lyö, kun sen lähelle tulee.
