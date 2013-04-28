@@ -5,13 +5,19 @@
 package harjoitustyo.hahmoJaVarusteet;
 
 /**
- *
- * @author petteriv
+ *olio joka liitetään Henkilo-olioon, josta Henkilo saa panssaripisteitä
+ * 
+ * 
  */
 public class Panssari {
     private int panssariPisteet;
     private String nimi;
-    
+    /**
+     * Kun panssari luodaan, se saa nimen, sekä panssaripisteitä 
+     * sen mukaan kuinka hyvä panssari on
+     * @param nimi
+     * @param panssariPisteet 
+     */
     public Panssari(String nimi, int panssariPisteet){
         this.nimi = nimi;
         this.panssariPisteet = panssariPisteet;
